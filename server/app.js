@@ -4,7 +4,7 @@ const getAllBooksRouter = require("./routes/getAllBooks");
 const createBookRouter = require("./routes/createBook");
 const deleteBookRouter = require("./routes/deleteBook");
 const updateBookRouter = require("./routes/updateBook");
-const db = require("./db");
+const serverConfig = require("./configs/server.config");
 
 // Middleware to parse JSON requests
 app.use(express.json());
@@ -14,10 +14,10 @@ app.use(getAllBooksRouter);
 app.use(createBookRouter);
 app.use(deleteBookRouter);
 app.use(updateBookRouter);
+// app.use(editapi);
 
 // Add other configurations and middleware as needed
 
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(serverConfig.PORT, () => {
+  console.log(`Server started on the port no :${serverConfig.PORT}`);
 });

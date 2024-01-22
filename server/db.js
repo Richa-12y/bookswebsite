@@ -1,14 +1,7 @@
 const mysql = require("mysql");
+const dbConfig = require("./configs/db.config");
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Richa123",
-  database: "books",
-  authPlugins: {
-    mysql_clear_password: () => () => Buffer.from("your_db_password" + "\0"),
-  },
-});
+const db = mysql.createConnection(dbConfig);
 
 db.connect((err) => {
   if (err) {
