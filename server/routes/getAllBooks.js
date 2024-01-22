@@ -22,3 +22,6 @@ router.get("/books", async (req, res) => {
 });
 
 module.exports = router;
+//this is for get all the data from book api
+//this is new create book
+//this is deleted api
