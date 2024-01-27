@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="flex flex-col h-screen">
       <Navbar />
-      <div className="flex-1 mx-auto p-8 overflow-y-auto bg-teal-100">
+      <div className="flex-1 mx-auto p-8  bg-teal-100 w-full justify-center items-center">
         <AppRouter />
       </div>
       <Footer />
