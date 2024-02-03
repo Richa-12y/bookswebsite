@@ -4,9 +4,9 @@ import Footer from "./componet/Footer";
 import AppRouter from "./router/AppRouter";
 function App() {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div className="flex-1 mx-auto p-8 overflow-y-auto bg-teal-100">
+      <div className="flex-1 mx-auto p-8 w-full justify-center items-center">
         <AppRouter />
       </div>
       <Footer />

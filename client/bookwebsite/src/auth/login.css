@@ -1,0 +1,11 @@
+.custom-border-radius {
+  background: rgb(118, 27, 179);
+  background: linear-gradient(
+    90deg,
+    rgba(118, 27, 179, 1) 0%,
+    rgba(29, 79, 253, 0.4767156862745098) 11%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
