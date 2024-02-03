@@ -3,9 +3,9 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer className="text-gray-600 body-font">
-        <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-          <span className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+      <footer className="text-gray-600 body-font px-24 py-2">
+        <div className="container mx-auto flex items-center sm:flex-row flex-col">
+          <span className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900 ml-8">
             <a href="https://flowbite.com/" class="flex items-center">
               <img
                 src="https://flowbite.com/docs/images/logo.svg"
