@@ -5,11 +5,10 @@ import GoogleIcon from "../assert/google.png";
 // import axios from "axios";
 import "./login.css";
 import { getRandomQuote } from "./quoteService";
-const Login = () => {
+const Login = (props) => {
+  console.log(props, "hello");
+  const { hasExistingAccount, toggleForm } = props;
   const [randomQuote, setRandomQuote] = useState("");
-  const handleLogin = () => {
-    // Handle the login logic
-  };
 
   useEffect(() => {
     getRandomQuoteAndSetTimeout();
@@ -89,12 +88,15 @@ const Login = () => {
             >
               Log In
             </button>
-            <Link
-              to="/signup"
-              className="font-bold text-sm text-blue-500 hover:text-blue-800"
-            >
-              Need an account? Sign Up
-            </Link>
+            {hasExistingAccount && (
+              <Link
+                to="/signup"
+                className="font-bold text-sm text-blue-500 hover:text-blue-800"
+                onClick={toggleForm}
+              >
+                Need an account? Sign Up
+              </Link>
+            )}
           </div>
           <div className="w-[100%] flex justify-center items-center -mt-1 text-white font-bold">
             Or log in with

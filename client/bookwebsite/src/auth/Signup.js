@@ -5,17 +5,14 @@ import GoogleIcon from "../assert/google.png";
 import "./login.css"; // Assuming you have a signup.css file for styling
 import { getRandomQuote } from "./quoteService";
 
-const SignUp = () => {
+const SignUp = (props) => {
+  const { hasExistingAccount, toggleForm } = props;
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [randomQuote, setRandomQuote] = useState("");
-
-  const handleSignUp = () => {
-    // Handle signup logic
-  };
 
   useEffect(() => {
     getRandomQuoteAndSetTimeout();
@@ -159,12 +156,15 @@ const SignUp = () => {
             >
               Sign Up
             </button>
-            <Link
-              to="/login"
-              className="font-bold text-sm text-blue-500 hover:text-blue-800"
-            >
-              Already have an account? Log In
-            </Link>
+            {hasExistingAccount && (
+              <Link
+                to="/login"
+                className="font-bold text-sm text-blue-500 hover:text-blue-800"
+                onClick={toggleForm}
+              >
+                Already have an account? Log In
+              </Link>
+            )}
           </div>
 
           {/* Social login buttons */}
